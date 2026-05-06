@@ -27,7 +27,7 @@ a {
 }
 
 img.logo {
-  height: 42px;
+  height: 84px;
   width: auto;
   margin-right: 12px;
 }
@@ -71,23 +71,24 @@ img.logo {
 
 .hero-section {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
   padding: 120px 24px 72px;
-  background: center/cover no-repeat url('poster.jpg');
   position: relative;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(2, 9, 18, 0.72), rgba(2, 9, 18, 0.9));
+.hero-image {
+  background: center/cover no-repeat url('poster.jpg');
+  min-height: 100%;
+  border-radius: 24px;
+  margin-left: 24px;
 }
 
 .hero-content {
-  position: relative;
-  max-width: 760px;
+  padding: 0 24px;
+  max-width: 600px;
+}
   text-align: left;
   z-index: 1;
 }
@@ -289,6 +290,14 @@ img.logo {
   .services-section .cards-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero-image {
+    margin-left: 0;
+    min-height: 400px;
   }
 }
 
