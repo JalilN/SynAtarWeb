@@ -88,7 +88,6 @@ img.logo {
 .hero-content {
   padding: 0 24px;
   max-width: 600px;
-}
   text-align: left;
   z-index: 1;
 }
@@ -99,6 +98,10 @@ img.logo {
   color: var(--accent);
   margin-bottom: 18px;
   font-size: 0.82rem;
+}
+
+.eyebrow.highlight {
+  color: var(--accent);
 }
 
 .hero-content h1 {
