@@ -75,7 +75,7 @@ img.logo {
 .hero-section {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 0.8fr 2.2fr;
+  grid-template-columns: 0.6fr 2.4fr;
   gap: 16px;
   align-items: center;
   padding: 1px 24px 72px;
