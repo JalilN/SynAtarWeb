@@ -41,7 +41,7 @@ img.logo {
   justify-content: space-between;
   align-items: center;
   padding: 24px 32px;
-  position: absolute;
+  position: relative;
   width: 100%;
   z-index: 10;
 }
@@ -78,7 +78,7 @@ img.logo {
   grid-template-columns: 1fr 2fr;
   gap: 24px;
   align-items: center;
-  padding: 120px 24px 72px;
+  padding: 180px 24px 72px;
   position: relative;
 }
 
