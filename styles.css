@@ -78,7 +78,7 @@ img.logo {
   grid-template-columns: 1fr 2fr;
   gap: 24px;
   align-items: center;
-  padding: 8px 24px 72px;
+  padding: 1px 24px 72px;
   position: relative;
 }
 
