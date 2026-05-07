@@ -75,8 +75,8 @@ img.logo {
 .hero-section {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 24px;
+  grid-template-columns: 0.8fr 2.2fr;
+  gap: 16px;
   align-items: center;
   padding: 1px 24px 72px;
   position: relative;
@@ -90,7 +90,7 @@ img.logo {
 
 .hero-content {
   padding: 0 24px;
-  max-width: 760px;
+  max-width: 620px;
   text-align: left;
   z-index: 1;
 }
