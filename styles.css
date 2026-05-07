@@ -72,7 +72,8 @@ img.logo {
 .hero-section {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 24px;
   align-items: center;
   padding: 120px 24px 72px;
   position: relative;
@@ -82,12 +83,11 @@ img.logo {
   background: center/contain no-repeat url('poster.jpg');
   min-height: 100%;
   border-radius: 24px;
-  margin-left: 24px;
 }
 
 .hero-content {
   padding: 0 24px;
-  max-width: 600px;
+  max-width: 760px;
   text-align: left;
   z-index: 1;
 }
