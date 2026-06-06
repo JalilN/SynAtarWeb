@@ -1,48 +1,67 @@
 # SynAtar Web
 
-This folder contains a static SynAtar website scaffold.
+Static website for SynAtar, a UK-based geoscience and subsurface consultancy. The site is built with plain HTML and CSS and is deployed with GitHub Pages.
 
-## Setup
+## Pages
 
-- Copy the company logo image to `logo.png` in this folder.
-- Copy the large homepage poster image to `poster.jpg` in this folder.
+- `index.html` - homepage with hero messaging and primary calls to action
+- `about.html` - company overview
+- `services.html` - geophysics, reservoir studies, and expertise content
+- `contact.html` - contact details and company information
 
-## Files
+## Assets
 
-- `index.html` — main website page
-- `styles.css` — styling for the page
+- `logo.png` - SynAtar logo used in the site header
+- `poster.jpg` - homepage and service imagery referenced by `styles.css`
+- `styles.css` - shared layout, typography, colors, and responsive styling
 
-## Notes
+Keep image filenames lowercase as referenced in the HTML and CSS. GitHub Pages is case-sensitive, so `poster.jpg` and `Poster.jpg` are treated as different files after deployment.
 
-- The homepage hero and service cards use `poster.jpg` as the background image.
-- The company contact details and registration number have been updated as requested.
+## Local Preview
 
-## Domain Deployment
-
-To deploy this site to `synatar.co.uk` with GitHub Pages:
-
-- Create a GitHub repository and push the contents of this folder to the `main` branch.
-- The repo already includes a `CNAME` file for `synatar.co.uk`.
-- GitHub Actions is configured in `.github/workflows/pages.yml` to publish the site from the repository root.
-- Add your domain DNS records as required by GitHub Pages for a custom domain.
-
-### Deploying locally
-
-1. Place `logo.png` and `poster.jpg` in this folder.
-2. Initialize the repository and commit all files.
-3. Create a GitHub repository and add it as the `origin` remote.
-4. Push to the `main` branch.
-
-Example commands:
+Because this is a static site, you can open `index.html` directly in a browser. For a closer GitHub Pages-style preview, serve the folder locally:
 
 ```powershell
-cd "c:\Users\jalil\OneDrive\Music\Documents\GitHub\SynAtar Web"
-git init
-git add .
-git commit -m "Initial SynAtar website"
-git remote add origin https://github.com/<your-username>/synatar-web.git
-git branch -M main
-git push -u origin main
+python -m http.server 8000
 ```
 
-After the first push, GitHub Pages should build the site automatically.
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## Deployment
+
+This repository includes:
+
+- `CNAME` configured for `synatar.co.uk`
+- `.nojekyll` so GitHub Pages publishes the static files directly
+- `.github/workflows/pages.yml` to deploy the repository root on pushes to `main`
+
+To deploy updates:
+
+```powershell
+git add .
+git commit -m "Update SynAtar website"
+git push origin main
+```
+
+After the push, GitHub Actions publishes the site to GitHub Pages.
+
+## Domain
+
+The custom domain is:
+
+```text
+synatar.co.uk
+```
+
+Make sure the DNS records for the domain point to GitHub Pages and that the repository Pages settings use the same custom domain.
+
+## Company Details
+
+- Email: `info@synatar.co.uk`
+- Phone: `+44 7712 885371`
+- Location: London, UK
+- Company Registration No: `17200144`
