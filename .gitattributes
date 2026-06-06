@@ -1,2 +1,15 @@
-# Auto detect text files and perform LF normalization
+# Keep website and configuration text files consistent across platforms.
 * text=auto
+
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+CNAME text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
