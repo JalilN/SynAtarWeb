@@ -62,9 +62,9 @@ img.logo {
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.03em;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 8px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   justify-self: start;
 }
 
@@ -353,7 +353,7 @@ img.logo {
     margin-right: 0;
   }
   .brand {
-    padding: 6px;
+    padding: 0;
   }
   .brand span {
     display: none;
