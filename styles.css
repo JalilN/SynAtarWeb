@@ -279,7 +279,26 @@ img.logo {
 }
 
 .service-details-section {
+  min-height: calc(100vh - var(--header-height));
   background: linear-gradient(180deg, #07121f 0%, #031017 100%);
+}
+
+.service-details-heading {
+  margin-bottom: 32px;
+}
+
+.service-details-heading h1 {
+  margin: 12px 0 0;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+.back-link {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.back-link::before {
+  content: "\2190  ";
 }
 
 .service-details-grid {
