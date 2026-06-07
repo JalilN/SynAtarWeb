@@ -29,7 +29,7 @@
           <h2>Let's Start the Conversation.</h2>
           <p>Whether you're evaluating exploration opportunities, optimising field development and infill drilling programmes, advancing geothermal projects, assessing carbon storage potential, or seeking technical assurance and independent peer review, SynAtar is ready to support your next decision with independent geoscience expertise.</p>
         </div>
-        <form class="contact-form" action="mailto:jalil.nasseri@synatar.co.uk" method="post" enctype="text/plain">
+        <form class="contact-form" id="contact-form">
           <div class="form-field">
             <label for="name">Name</label>
             <input id="name" name="Name" type="text" autocomplete="name" required />
@@ -51,5 +51,28 @@
       </div>
     </section>
   </main>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const name = form.elements["Name"].value;
+      const email = form.elements["Email"].value;
+      const company = form.elements["Company"].value || "Not provided";
+      const message = form.elements["How can we help?"].value;
+      const subject = encodeURIComponent("SynAtar website enquiry from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nCompany: " + company +
+        "\n\nHow can we help?\n" + message
+      );
+
+      window.location.href =
+        "mailto:" + ["jalil.nasseri", "synatar.co.uk"].join("@") +
+        "?subject=" + subject +
+        "&body=" + body;
+    });
+  </script>
 </body>
 </html>
