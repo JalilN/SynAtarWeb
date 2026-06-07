@@ -45,8 +45,8 @@ img.logo {
   padding: 24px 32px;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 20%;
+  width: 60%;
   min-height: var(--header-height);
   z-index: 1000;
   background: rgba(4, 12, 19, 0.96);
@@ -311,6 +311,8 @@ img.logo {
   }
 
   .topbar {
+    left: 0;
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     padding: 16px 24px;
