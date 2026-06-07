@@ -239,6 +239,8 @@ img.logo {
 
 .geophysics-image {
   background-image: url('geophysics.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-content {
