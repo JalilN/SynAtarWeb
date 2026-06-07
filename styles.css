@@ -315,6 +315,14 @@ img.logo {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.service-detail[hidden] {
+  display: none;
+}
+
+.service-details-grid.single-service {
+  grid-template-columns: 1fr;
+}
+
 .service-detail h2 {
   margin-bottom: 16px;
   font-size: clamp(1.4rem, 2vw, 1.8rem);

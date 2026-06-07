@@ -66,5 +66,21 @@
       </div>
     </section>
   </main>
+  <script>
+    function showSelectedService() {
+      const selectedId = window.location.hash.slice(1);
+      const details = document.querySelectorAll(".service-detail");
+      const selectedDetail = document.getElementById(selectedId);
+      const detailsGrid = document.querySelector(".service-details-grid");
+
+      details.forEach(function (detail) {
+        detail.hidden = Boolean(selectedDetail) && detail !== selectedDetail;
+      });
+      detailsGrid.classList.toggle("single-service", Boolean(selectedDetail));
+    }
+
+    showSelectedService();
+    window.addEventListener("hashchange", showSelectedService);
+  </script>
 </body>
 </html>
