@@ -48,30 +48,58 @@
           </div>
           <button class="btn btn-primary form-submit" type="submit">Send Message</button>
         </form>
+        <div class="form-confirmation" id="form-confirmation" role="status" aria-live="polite" hidden>
+          <strong>Message Received</strong>
+          <p>Thank You for Contacting Synatar. We have received your message and will respond to your enquiry as soon as possible.</p>
+        </div>
+        <p class="form-error" id="form-error" role="alert" hidden>We could not send your message. Please try again.</p>
       </div>
     </section>
   </main>
   <script>
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
+    document.getElementById("contact-form").addEventListener("submit", async function (event) {
       event.preventDefault();
 
       const form = event.currentTarget;
-      const name = form.elements["Name"].value;
-      const email = form.elements["Email"].value;
-      const company = form.elements["Company"].value || "Not provided";
-      const message = form.elements["How can we help?"].value;
-      const subject = encodeURIComponent("SynAtar website enquiry from " + name);
-      const body = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\nCompany: " + company +
-        "\n\nHow can we help?\n" + message
-      );
+      const submitButton = form.querySelector(".form-submit");
+      const confirmation = document.getElementById("form-confirmation");
+      const errorMessage = document.getElementById("form-error");
+      const recipient = ["jalil.nasseri", "synatar.co.uk"].join("@");
+      const payload = {
+        Name: form.elements["Name"].value,
+        Email: form.elements["Email"].value,
+        Company: form.elements["Company"].value || "Not provided",
+        "How can we help?": form.elements["How can we help?"].value,
+        _subject: "New SynAtar website enquiry",
+        _template: "table"
+      };
 
-      window.location.href =
-        "mailto:" + ["jalil.nasseri", "synatar.co.uk"].join("@") +
-        "?subject=" + subject +
-        "&body=" + body;
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      errorMessage.hidden = true;
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/" + recipient, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error("Message submission failed");
+        }
+
+        form.reset();
+        form.hidden = true;
+        confirmation.hidden = false;
+      } catch (error) {
+        errorMessage.hidden = false;
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }
     });
   </script>
 </body>
