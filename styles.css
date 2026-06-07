@@ -226,6 +226,8 @@ img.logo {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   overflow: hidden;
@@ -245,14 +247,62 @@ img.logo {
 }
 
 .card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 28px;
 }
 
 .card-content h3 {
-  margin-top: 0;
+  margin: 0 0 14px;
+  line-height: 1.3;
 }
 
 .card-content p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.learn-more {
+  align-self: flex-start;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.learn-more::after {
+  content: " \2192";
+}
+
+.learn-more:hover {
+  color: var(--text);
+}
+
+.service-details-section {
+  background: linear-gradient(180deg, #07121f 0%, #031017 100%);
+}
+
+.service-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-detail {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.service-detail h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.service-detail p {
+  margin: 0;
   color: var(--muted);
 }
 
@@ -474,6 +524,7 @@ img.logo {
     justify-self: center;
   }
   .services-section .cards-grid,
+  .service-details-grid,
   .contact-layout {
     grid-template-columns: 1fr;
   }
