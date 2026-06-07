@@ -13,7 +13,7 @@
       <div class="brand">
         <img src="logo.png" alt="SynAtar logo" class="logo" />
       </div>
-      <p class="header-tagline">Integrated Geoscience,<br />Smarter Subsurface Decisions.</p>
+      <p class="header-tagline">Your Project,<br />Our Expertise</p>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -24,27 +24,32 @@
   </header>
   <main>
     <section class="section contact-section">
-      <div class="section-inner contact-grid">
-        <div>
-          <span class="section-label">Contact</span>
-          <h2>Get in touch</h2>
-          <p>For enquiries and project discussions, contact SynAtar using the details below.</p>
-          <div class="contact-details">
-            <p><strong>Email:</strong> <a href="mailto:info@synatar.co.uk">info@synatar.co.uk</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+447712885371">+44 7712 885371</a></p>
-            <p><strong>Address:</strong> London, UK</p>
-            <p><strong>Company Registration:</strong> 17200144</p>
+      <div class="section-inner contact-layout">
+        <div class="contact-intro">
+          <h2>Let's Start the Conversation.</h2>
+          <p>Whether you're evaluating exploration opportunities, optimising field development and infill drilling programmes, advancing geothermal projects, assessing carbon storage potential, or seeking technical assurance and independent peer review, SynAtar is ready to support your next decision with independent geoscience expertise.</p>
+        </div>
+        <form class="contact-form" action="mailto:jalil.nasseri@synatar.co.uk" method="post" enctype="text/plain">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" autocomplete="name" required />
           </div>
-        </div>
-        <div class="contact-map-card">
-          <h3>Head Office</h3>
-          <p>Synatar is a UK-based consultancy serving clients across global energy markets.</p>
-        </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form-field">
+            <label for="company">Company <span>(optional)</span></label>
+            <input id="company" name="Company" type="text" autocomplete="organization" />
+          </div>
+          <div class="form-field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="How can we help?" rows="7" required></textarea>
+          </div>
+          <button class="btn btn-primary form-submit" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
   </main>
-  <footer class="site-footer">
-    <p>SynAtar © 2026 | Company Registration No. 17200144</p>
-  </footer>
 </body>
 </html>
