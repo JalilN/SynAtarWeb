@@ -30,6 +30,10 @@
           <p>Whether you're evaluating exploration opportunities, optimising field development and infill drilling programmes, advancing geothermal projects, assessing carbon storage potential, or seeking technical assurance and independent peer review, SynAtar is ready to support your next decision with independent geoscience expertise.</p>
         </div>
         <form class="contact-form" id="contact-form">
+          <div class="honeypot-field" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="form-field">
             <label for="name">Name</label>
             <input id="name" name="Name" type="text" autocomplete="name" required />
@@ -64,15 +68,25 @@
       const submitButton = form.querySelector(".form-submit");
       const confirmation = document.getElementById("form-confirmation");
       const errorMessage = document.getElementById("form-error");
-      const recipient = ["jalil.nasseri", "synatar.co.uk"].join("@");
+      const recipient = ["info", "synatar.co.uk"].join("@");
+      const requesterEmail = form.elements["Email"].value;
       const payload = {
         Name: form.elements["Name"].value,
-        Email: form.elements["Email"].value,
+        Email: requesterEmail,
         Company: form.elements["Company"].value || "Not provided",
         "How can we help?": form.elements["How can we help?"].value,
+        _honey: form.elements["_honey"].value,
+        _captcha: "true",
+        _blacklist: "viagra,casino,cryptocurrency investment,guest post,backlinks,SEO services",
+        _replyto: requesterEmail,
         _subject: "New SynAtar website enquiry",
-        _template: "table"
+        _template: "table",
+        _url: window.location.href
       };
+
+      if (payload._honey) {
+        return;
+      }
 
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
@@ -88,7 +102,9 @@
           body: JSON.stringify(payload)
         });
 
-        if (!response.ok) {
+        const result = await response.json();
+
+        if (!response.ok || result.success === "false" || result.success === false) {
           throw new Error("Message submission failed");
         }
 
