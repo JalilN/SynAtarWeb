@@ -93,7 +93,7 @@
         }
 
         form.reset();
-        form.hidden = true;
+        document.querySelector(".contact-section").classList.add("submission-complete");
         confirmation.hidden = false;
       } catch (error) {
         errorMessage.hidden = false;
