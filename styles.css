@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   padding-top: var(--header-height);
@@ -21,6 +25,10 @@ body {
   color: var(--text);
   background: #02060c;
   line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
@@ -69,6 +77,7 @@ img.logo {
 }
 
 .header-tagline {
+  min-width: 0;
   margin: 0;
   color: var(--accent);
   font-size: clamp(1.6rem, 2.5vw, 2rem);
@@ -89,6 +98,7 @@ img.logo {
   color: #f3f6f9;
   font-size: 0.95rem;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -112,6 +122,7 @@ img.logo {
 }
 
 .hero-content {
+  min-width: 0;
   padding: 0 24px;
   max-width: 620px;
   text-align: left;
@@ -199,6 +210,11 @@ img.logo {
 
 .services-section {
   background: #06111c;
+}
+
+.section-header {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .services-section .cards-grid {
@@ -291,6 +307,7 @@ img.logo {
 
 .contact-details a {
   color: var(--text);
+  overflow-wrap: anywhere;
 }
 
 .contact-map-card {
@@ -309,19 +326,21 @@ img.logo {
 
 @media (max-width: 900px) {
   :root {
-    --header-height: 150px;
+    --header-height: 164px;
   }
 
   .topbar {
     grid-template-columns: 1fr 1fr;
-    gap: 8px 16px;
-    padding: 6px 24px;
+    gap: 6px 16px;
+    padding: 8px 24px;
   }
   img.logo {
-    height: 80px;
+    height: 76px;
   }
   .header-tagline {
     justify-self: end;
+    font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+    line-height: 1.3;
     text-align: right;
   }
   .nav-links {
@@ -337,49 +356,118 @@ img.logo {
   .hero-section {
     grid-template-columns: 1fr;
     gap: 24px;
+    padding-top: 32px;
   }
   .hero-image {
     margin-left: 0;
-    min-height: 400px;
+    min-height: 360px;
   }
 }
 
 @media (max-width: 640px) {
   :root {
-    --header-height: 114px;
+    --header-height: 148px;
   }
   img.logo {
-    height: 62px;
+    height: 54px;
     margin-right: 0;
-  }
-  .brand {
-    padding: 0;
-  }
-  .brand span {
-    display: none;
   }
   .topbar {
     gap: 6px 14px;
-    padding: 6px 18px;
+    padding: 8px 16px;
   }
   .header-tagline {
-    font-size: 1.36rem;
-    letter-spacing: 0.08em;
+    font-size: clamp(0.78rem, 3.8vw, 1.05rem);
+    letter-spacing: 0.06em;
+    line-height: 1.25;
   }
   .nav-links {
-    gap: 16px;
+    width: 100%;
+    gap: 8px;
+    justify-content: space-between;
   }
   .nav-links a {
-    font-size: 0.85rem;
+    padding: 6px 4px;
+    font-size: 0.8rem;
+  }
+  .hero-section {
+    min-height: auto;
+    gap: 28px;
+    padding: 36px 16px 48px;
+  }
+  .hero-content {
+    padding: 0;
   }
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: clamp(2.7rem, 15vw, 4rem);
+  }
+  .hero-content p {
+    margin: 18px 0 24px;
+    font-size: 1rem;
+  }
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+  }
+  .hero-image {
+    min-height: 260px;
+    border-radius: 16px;
   }
   .section {
-    padding: 64px 18px;
+    padding: 52px 16px;
+  }
+  .section h2 {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    line-height: 1.2;
+  }
+  .services-section .cards-grid {
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .card {
+    border-radius: 18px;
+  }
+  .card-image {
+    min-height: 200px;
+  }
+  .card-content {
+    padding: 22px;
   }
   .contact-map-card,
   .expertise-card {
-    padding: 24px;
+    padding: 22px;
+    border-radius: 18px;
+  }
+  .site-footer {
+    padding: 20px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --header-height: 142px;
+  }
+  .topbar {
+    padding-inline: 12px;
+  }
+  img.logo {
+    height: 48px;
+  }
+  .header-tagline {
+    font-size: 0.74rem;
+  }
+  .nav-links {
+    gap: 2px;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    width: 100%;
   }
 }
