@@ -525,6 +525,79 @@ img.logo {
   color: var(--muted);
 }
 
+.value-recovery-section {
+  background: linear-gradient(180deg, #06111c 0%, #031017 100%);
+}
+
+.value-recovery-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(300px, 1.2fr);
+  gap: 32px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.value-recovery-heading h1 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1;
+}
+
+.value-recovery-image {
+  min-height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: center/cover no-repeat url('ValueRecovery.png');
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.value-recovery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.value-recovery-card {
+  min-height: 220px;
+}
+
+.value-recovery-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.value-recovery-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.card-letter {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.value-recovery-cta .card-content {
+  align-items: center;
+  text-align: center;
+}
+
+.value-recovery-cta .learn-more,
+.value-recovery-cta .btn {
+  align-self: center;
+}
+
+.value-recovery-details {
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 32px auto 0;
+}
+
+.value-recovery-details .service-detail {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
 @media (max-width: 900px) {
   :root {
     --header-height: 164px;
@@ -563,6 +636,13 @@ img.logo {
   .hero-image {
     margin-left: 0;
     min-height: 360px;
+  }
+  .value-recovery-hero,
+  .value-recovery-grid {
+    grid-template-columns: 1fr;
+  }
+  .value-recovery-card:last-child {
+    grid-column: auto;
   }
 }
 
