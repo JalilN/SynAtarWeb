@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar value-recovery-topbar">
+    <div class="topbar">
       <div class="brand">
         <img src="logo.png" alt="SynAtar logo" class="logo" />
       </div>
@@ -28,12 +28,80 @@
     <section class="section value-recovery-section">
       <div class="value-recovery-hero">
         <div class="value-recovery-heading">
-          <h1>Unlocking More Value from<br />Existing Subsurface Data</h1>
-          <p class="value-recovery-keywords">Recover • Repurpose • Recontextualise • Reintegrate</p>
-          <p class="value-recovery-introduction">Building on existing technical investments to reveal additional opportunities, generate new insights and strengthen subsurface and investment decisions.</p>
-          <a class="btn btn-primary" href="value-recovery-sections.html">Explore the Methodology</a>
+          <p class="eyebrow highlight">Unlocking More Value from Existing Subsurface Data</p>
+          <h1>Value Recovery</h1>
         </div>
         <img class="value-recovery-image" src="ValueRecovery.png" alt="Value Recovery methodology" />
+      </div>
+
+      <div class="cards-grid value-recovery-grid">
+        <article class="card value-recovery-card" id="why-value-recovery">
+          <div class="card-content">
+            <p class="card-letter">A.</p>
+            <h2>Why Value Recovery?</h2>
+            <p>Identify overlooked opportunities and strengthen the economic performance of existing assets.</p>
+            <a class="learn-more" href="#why-value-recovery-details" data-detail="why-value-recovery-details" data-back="why-value-recovery">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card value-recovery-card" id="methodology">
+          <div class="card-content">
+            <p class="card-letter">B.</p>
+            <h2>How the methodology works</h2>
+            <p>Apply a structured, multidisciplinary approach to find, validate and prioritise value opportunities.</p>
+            <a class="learn-more" href="#methodology-details" data-detail="methodology-details" data-back="methodology">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card value-recovery-card" id="applications">
+          <div class="card-content">
+            <p class="card-letter">C.</p>
+            <h2>Where can it be applied?</h2>
+            <p>Use the methodology across oil and gas, carbon storage, geothermal and other subsurface projects.</p>
+            <a class="learn-more" href="#applications-details" data-detail="applications-details" data-back="applications">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card value-recovery-card" id="client-delivery">
+          <div class="card-content">
+            <p class="card-letter">D.</p>
+            <h2>What does the client receive?</h2>
+            <p>Receive clear findings, practical recommendations and a prioritised action plan.</p>
+            <a class="learn-more" href="#client-delivery-details" data-detail="client-delivery-details" data-back="client-delivery">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card value-recovery-card value-recovery-cta">
+          <div class="card-content">
+            <p class="card-letter">E.</p>
+            <h2>Call to action</h2>
+            <p>Discuss your asset, project or technical challenge with the SynAtar team.</p>
+            <a class="btn btn-primary" href="contact.html">Start a Conversation</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="value-recovery-details" hidden>
+        <article class="value-recovery-detail" id="why-value-recovery-details">
+          <a class="back-link value-recovery-back" href="#why-value-recovery">Back to Why Value Recovery?</a>
+          <h2>A. Why Value Recovery?</h2>
+          <p>Value Recovery provides a focused review of subsurface knowledge, operational data and development options to uncover opportunities that may not be visible in routine asset reviews. It helps teams challenge assumptions, reduce uncertainty and make more informed decisions that improve technical and commercial outcomes.</p>
+        </article>
+        <article class="value-recovery-detail" id="methodology-details" hidden>
+          <a class="back-link value-recovery-back" href="#methodology">Back to How the methodology works</a>
+          <h2>B. How the methodology works</h2>
+          <p>The approach integrates multidisciplinary technical review, data-led diagnosis and opportunity screening. Existing evidence is assessed, knowledge gaps are identified, and potential recovery options are ranked against value, feasibility, risk and the confidence of supporting information.</p>
+        </article>
+        <article class="value-recovery-detail" id="applications-details" hidden>
+          <a class="back-link value-recovery-back" href="#applications">Back to Where can it be applied?</a>
+          <h2>C. Where can it be applied?</h2>
+          <p>Value Recovery can support producing fields, undeveloped discoveries, mature assets, acquired portfolios, carbon storage projects and geothermal developments. It is suited to any project where additional subsurface understanding could unlock production, resource, schedule or cost improvements.</p>
+        </article>
+        <article class="value-recovery-detail" id="client-delivery-details" hidden>
+          <a class="back-link value-recovery-back" href="#client-delivery">Back to What does the client receive?</a>
+          <h2>D. What does the client receive?</h2>
+          <p>Clients receive a concise technical report, opportunity register and prioritised recommendations. Findings are presented in a clear decision context, with uncertainties, dependencies and proposed next steps defined so the client can take focused action.</p>
+        </article>
       </div>
     </section>
   </main>
@@ -41,5 +109,56 @@
   <footer class="site-footer">
     <p>SynAtar © 2026 | Company Registration No. 17200144</p>
   </footer>
+
+  <script>
+    const cards = document.querySelector(".value-recovery-grid");
+    const details = document.querySelector(".value-recovery-details");
+    const detailPanels = document.querySelectorAll(".value-recovery-detail");
+
+    function openDetail(detailId, backId) {
+      cards.hidden = true;
+      details.hidden = false;
+      detailPanels.forEach(function (panel) {
+        panel.hidden = panel.id !== detailId;
+      });
+      window.location.hash = detailId;
+      document.querySelector(".value-recovery-section").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showDetailFromHash() {
+      const detailId = window.location.hash.slice(1);
+      const selectedPanel = document.getElementById(detailId);
+      if (selectedPanel && selectedPanel.classList.contains("value-recovery-detail")) {
+        cards.hidden = true;
+        details.hidden = false;
+        detailPanels.forEach(function (panel) {
+          panel.hidden = panel.id !== detailId;
+        });
+      } else {
+        cards.hidden = false;
+        details.hidden = true;
+      }
+    }
+
+    document.querySelectorAll(".learn-more[data-detail]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        openDetail(link.dataset.detail, link.dataset.back);
+      });
+    });
+
+    document.querySelectorAll(".value-recovery-back").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        cards.hidden = false;
+        details.hidden = true;
+        history.replaceState(null, "", "#" + link.hash.slice(1));
+        document.querySelector(link.hash).scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+
+    showDetailFromHash();
+    window.addEventListener("hashchange", showDetailFromHash);
+  </script>
 </body>
 </html>
