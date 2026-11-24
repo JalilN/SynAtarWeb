@@ -370,6 +370,20 @@ img.logo {
   margin: 0 auto;
 }
 
+.services-feature-image {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: clamp(24px, 3vw, 48px);
+}
+
+.services-feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  clip-path: inset(0 round clamp(24px, 3vw, 48px));
+}
+
 .service-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
