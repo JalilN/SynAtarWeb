@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="about-page">
   <header class="site-header">
     <div class="topbar">
       <div class="brand">
@@ -16,7 +16,7 @@
       <p class="header-tagline">From Data to Knowledge,<br />From Knowledge to Value</p>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html" aria-current="page">About</a>
         <a href="services.html">Services</a>
         <a href="value-recovery.html">Value Recovery</a>
         <a href="contact.html">Contact</a>
@@ -27,13 +27,41 @@
     <section class="section about-section">
       <div class="section-inner about-layout">
         <div class="section-text">
-          <h2>Who we are</h2>
-          <p class="about-tagline">Expertise. Integration. Perspective.</p>
+          <p class="about-section-label">WHO WE ARE</p>
+          <h1 class="about-headline">Expertise. Integration. Perspective.</h1>
           <p>SynAtar is an independent, UK-based geoscience and technical advisory consultancy providing integrated subsurface solutions to the global energy sector. We combine extensive international experience, multidisciplinary expertise and advanced analytical capabilities to support operators, asset owners and investors throughout the asset lifecycle — from exploration and appraisal to field development, production and emerging geo-energy opportunities.</p>
           <p>With experience across diverse geological basins and complex subsurface environments, we integrate geoscience, engineering, technology and commercial perspectives to deliver technically robust, decision-focused solutions tailored to our clients’ objectives.</p>
           <p>Our approach extends beyond conventional data analysis and interpretation. We seek to generate new insights, identify additional opportunities and unlock greater value from both new and existing subsurface data and technical investments. Through independent technical assessment and integrated analysis, we help our clients better understand uncertainties, manage risks and make informed technical, commercial and investment decisions.</p>
         </div>
         <img class="about-image" src="4parts.png" alt="Four-part illustration of integrated subsurface analysis" />
+      </div>
+    </section>
+    <section class="about-highlights" aria-label="What sets SynAtar apart">
+      <div class="about-highlights-grid">
+        <article class="about-highlight">
+          <svg class="about-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+          </svg>
+          <h2>Global Experience</h2>
+          <p>Diverse geological basins and subsurface environments.</p>
+        </article>
+        <article class="about-highlight">
+          <svg class="about-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+            <path d="m3 12 9 5 9-5M3 16l9 5 9-5" />
+          </svg>
+          <h2>Integrated Expertise</h2>
+          <p>Multidisciplinary technical and commercial perspectives.</p>
+        </article>
+        <article class="about-highlight">
+          <svg class="about-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z" />
+          </svg>
+          <h2>Independent Perspective</h2>
+          <p>Objective analysis and decision-focused recommendations.</p>
+        </article>
       </div>
     </section>
   </main>
