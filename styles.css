@@ -7,7 +7,7 @@
   --accent: #f6b244;
   --accent-strong: #f5a51b;
   --max-width: 1200px;
-  --header-height: 140px;
+  --header-height: 164px;
 }
 
 * {
@@ -708,6 +708,13 @@ img.logo {
   .contact-layout {
     grid-template-columns: 1fr;
   }
+  .form-confirmation,
+  .form-error {
+    grid-column: 1;
+  }
+  .form-error {
+    margin: 0;
+  }
   .hero-section {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -728,7 +735,11 @@ img.logo {
 
 @media (max-width: 640px) {
   :root {
-    --header-height: 148px;
+    --header-height: 152px;
+  }
+  .topbar:not(.value-recovery-topbar),
+  .value-recovery-topbar {
+    grid-template-columns: auto minmax(0, 1fr);
   }
   img.logo {
     height: 54px;
@@ -743,14 +754,35 @@ img.logo {
     font-size: clamp(0.78rem, 3.8vw, 1.05rem);
     letter-spacing: 0.06em;
     line-height: 1.25;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: normal;
+    text-align: right;
   }
-  .nav-links {
+  .topbar:not(.value-recovery-topbar) .header-tagline,
+  .value-recovery-topbar .header-tagline {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: stretch;
+    align-self: center;
+    font-size: clamp(0.78rem, 3.8vw, 1.05rem);
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+    text-align: right;
+    white-space: normal;
+  }
+  .topbar:not(.value-recovery-topbar) .nav-links,
+  .value-recovery-topbar .nav-links {
     width: 100%;
+    max-width: 100%;
     gap: 8px;
-    justify-content: space-between;
+    justify-content: center;
+    justify-self: stretch;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-left: 0;
   }
-  .nav-links a {
+  .topbar:not(.value-recovery-topbar) .nav-links a,
+  .value-recovery-topbar .nav-links a {
     padding: 6px 4px;
     font-size: 0.8rem;
   }
@@ -784,6 +816,9 @@ img.logo {
     font-size: clamp(1.8rem, 9vw, 2.4rem);
     line-height: 1.2;
   }
+  .value-recovery-keywords {
+    white-space: normal;
+  }
   .services-section .cards-grid {
     gap: 18px;
     margin-top: 24px;
@@ -810,7 +845,7 @@ img.logo {
   }
   .form-error {
     grid-column: 1;
-    margin: -20px 0 0;
+    margin: 0;
   }
   .form-confirmation {
     grid-column: 1;
@@ -822,9 +857,6 @@ img.logo {
 }
 
 @media (max-width: 420px) {
-  :root {
-    --header-height: 142px;
-  }
   .topbar {
     padding-inline: 12px;
   }
