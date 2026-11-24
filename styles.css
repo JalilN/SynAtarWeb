@@ -109,7 +109,7 @@ img.logo {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 65vh;
   display: grid;
   grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
   gap: 16px;
@@ -120,8 +120,9 @@ img.logo {
 
 .hero-image {
   background: center/contain no-repeat url('poster.jpg');
-  min-height: 100%;
-  border-radius: 24px;
+  aspect-ratio: 3300 / 1819;
+  overflow: hidden;
+  border-radius: 32px;
 }
 
 .hero-content {
@@ -880,7 +881,6 @@ img.logo {
   }
   .hero-image {
     margin-left: 0;
-    min-height: 360px;
   }
   .value-recovery-hero,
   .value-recovery-grid {
@@ -976,8 +976,7 @@ img.logo {
     letter-spacing: 0.16em;
   }
   .hero-image {
-    min-height: 260px;
-    border-radius: 16px;
+    border-radius: 20px;
   }
   .section {
     padding: 52px 16px;
