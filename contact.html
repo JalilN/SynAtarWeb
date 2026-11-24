@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SynAtar</title>
+  <title>Contact | SynAtar</title>
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -27,20 +27,28 @@
     <section class="section contact-section">
       <div class="section-inner contact-layout">
         <div class="contact-intro">
+          <p class="section-label contact-section-label">Get in Touch</p>
           <h2>Let's Start the Conversation.</h2>
-          <p>Whether you're evaluating exploration opportunities, optimising field development and infill drilling programmes, advancing geothermal projects, assessing carbon storage potential, or seeking technical assurance and independent peer review, SynAtar is ready to support your next decision with independent geoscience expertise.</p>
+          <p>Whether you are exploring new opportunities, advancing an existing project, evaluating an investment or seeking an independent technical perspective, SynAtar is here to help.</p>
+          <p>From specialist geoscience studies and integrated subsurface evaluations to technical assurance and Value Recovery, we tailor our expertise to your objectives.</p>
+          <p>We welcome conversations with operators, asset owners, investors and potential collaboration partners to explore how we can support your next project or decision.</p>
+          <div class="contact-details">
+            <p><strong>LinkedIn</strong> <a href="https://www.linkedin.com/company/synatar-ltd/?viewAsMember=true">SynAtar company page</a></p>
+          </div>
+          <p class="contact-location">UK-based · Working internationally</p>
         </div>
         <form class="contact-form" id="contact-form">
+          <h2>Discuss Your Project</h2>
           <div class="honeypot-field" aria-hidden="true">
             <label for="website">Leave this field empty</label>
             <input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off" />
           </div>
           <div class="form-field">
-            <label for="name">Name</label>
+            <label for="name">Name <span>(required)</span></label>
             <input id="name" name="Name" type="text" autocomplete="name" required />
           </div>
           <div class="form-field">
-            <label for="email">Email</label>
+            <label for="email">Email <span>(required)</span></label>
             <input id="email" name="Email" type="email" autocomplete="email" required />
           </div>
           <div class="form-field">
@@ -48,14 +56,28 @@
             <input id="company" name="Company" type="text" autocomplete="organization" />
           </div>
           <div class="form-field">
-            <label for="message">How can we help?</label>
+            <label for="enquiry-nature">Nature of enquiry <span>(optional)</span></label>
+            <select id="enquiry-nature" name="Nature of enquiry">
+              <option value="">Select an option</option>
+              <option value="Exploration and appraisal">Exploration and appraisal</option>
+              <option value="Field development and reservoir management">Field development and reservoir management</option>
+              <option value="Technical assurance and independent review">Technical assurance and independent review</option>
+              <option value="Asset evaluation and investment due diligence">Asset evaluation and investment due diligence</option>
+              <option value="Value Recovery">Value Recovery</option>
+              <option value="Geo-energy and subsurface storage">Geo-energy and subsurface storage</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">How can we help? <span>(required)</span></label>
             <textarea id="message" name="How can we help?" rows="7" required></textarea>
           </div>
+          <p class="privacy-notice">We will use your information to respond to your enquiry. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
           <button class="btn btn-primary form-submit" type="submit">Send Message</button>
         </form>
         <div class="form-confirmation" id="form-confirmation" role="status" aria-live="polite" hidden>
           <strong>Message Received</strong>
-          <p>Thank You for Contacting Synatar. We have received your message and will respond to your enquiry as soon as possible.</p>
+          <p>Thank you for contacting SynAtar. We have received your message and will respond to your enquiry as soon as possible.</p>
         </div>
         <p class="form-error" id="form-error" role="alert" hidden>We could not send your message. Please try again.</p>
       </div>
@@ -75,6 +97,7 @@
         Name: form.elements["Name"].value,
         Email: requesterEmail,
         Company: form.elements["Company"].value || "Not provided",
+        "Nature of enquiry": form.elements["Nature of enquiry"].value || "Not provided",
         "How can we help?": form.elements["How can we help?"].value,
         _honey: form.elements["_honey"].value,
         _captcha: "true",
