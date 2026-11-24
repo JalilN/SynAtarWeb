@@ -376,7 +376,7 @@ img.logo {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 36px;
+  border-radius: clamp(24px, 3vw, 48px);
 }
 
 .services-feature-image img {
@@ -385,6 +385,7 @@ img.logo {
   height: 100%;
   object-fit: contain;
   border-radius: inherit;
+  clip-path: inset(0 round clamp(24px, 3vw, 48px));
 }
 
 .service-card-grid {
