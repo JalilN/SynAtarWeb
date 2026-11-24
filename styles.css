@@ -532,47 +532,58 @@ img.logo {
 .value-recovery-topbar .header-tagline {
   justify-self: start;
   text-align: left;
-  white-space: normal;
 }
 
 .value-recovery-section {
-  padding-top: 22px;
+  padding: 22px 24px 64px;
 }
 
 .value-recovery-hero {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 0.92fr) minmax(300px, 1.08fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-recovery-heading {
+  min-width: 0;
 }
 
 .value-recovery-heading h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.2rem, 4.2vw, 4.2rem);
+  margin: 0 0 12px;
+  font-size: clamp(2.35rem, 3.15vw, 3rem);
   line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 .value-recovery-keywords {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   color: var(--accent);
-  font-size: clamp(0.78rem, 1.15vw, 1rem);
+  font-size: clamp(0.82rem, 1.32vw, 1.08rem);
   font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .value-recovery-introduction {
-  max-width: 520px;
-  margin: 0 0 24px;
+  max-width: 500px;
+  margin: 0 0 22px;
   color: var(--text);
-  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
-  line-height: 1.55;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.5;
 }
 
 .value-recovery-image {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 520px;
   object-fit: contain;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  background-color: rgba(255, 255, 255, 0.04);
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
 }
 
 .value-recovery-grid {
