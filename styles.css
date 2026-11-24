@@ -528,12 +528,40 @@ img.logo {
 }
 
 .value-recovery-topbar {
-  grid-template-columns: auto 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 32px;
+  row-gap: 0;
+}
+
+.value-recovery-topbar .brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.value-recovery-topbar .nav-links {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  gap: 18px;
+  padding-left: 4px;
+  line-height: 1;
+}
+
+.value-recovery-topbar .nav-links a {
+  padding: 2px 0 8px;
+  font-size: 0.95rem;
 }
 
 .value-recovery-topbar .header-tagline {
-  justify-self: start;
-  text-align: left;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  justify-self: center;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: normal;
 }
 
 .value-recovery-section {
@@ -633,6 +661,43 @@ img.logo {
   color: var(--muted);
 }
 
+/* Standard page headers: logo with navigation beneath it */
+.topbar:not(.value-recovery-topbar) {
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 32px;
+  row-gap: 0;
+}
+
+.topbar:not(.value-recovery-topbar) .brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.topbar:not(.value-recovery-topbar) .nav-links {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  gap: 18px;
+  padding-left: 4px;
+  line-height: 1;
+}
+
+.topbar:not(.value-recovery-topbar) .nav-links a {
+  padding: 2px 0 8px;
+}
+
+.topbar:not(.value-recovery-topbar) .header-tagline {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  justify-self: center;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
 @media (max-width: 900px) {
   :root {
     --header-height: 164px;
@@ -678,6 +743,22 @@ img.logo {
   }
   .value-recovery-card:last-child {
     grid-column: auto;
+  }
+
+  .topbar:not(.value-recovery-topbar) {
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto;
+  }
+
+  .topbar:not(.value-recovery-topbar) .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .topbar:not(.value-recovery-topbar) .nav-links {
+    grid-column: 1;
+    grid-row: 2;
+    width: max-content;
   }
 }
 
