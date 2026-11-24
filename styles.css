@@ -203,9 +203,24 @@ img.logo {
   margin: 0 0 24px;
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+
 .about-section p {
   max-width: 720px;
   color: var(--muted);
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
 }
 
 .services-section {
@@ -741,8 +756,13 @@ img.logo {
   }
   .services-section .cards-grid,
   .service-details-grid,
-  .contact-layout {
+  .contact-layout,
+  .about-layout {
     grid-template-columns: 1fr;
+  }
+  .about-image {
+    max-width: 720px;
+    margin: 0 auto;
   }
   .form-confirmation,
   .form-error {
