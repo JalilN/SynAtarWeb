@@ -11,7 +11,7 @@ Static website for SynAtar, a UK-based geoscience and subsurface consultancy. Th
 
 ## Assets
 
-- `logo.png` - SynAtar logo used in the site header
+- `LogoRound.png` - SynAtar logo used in the site header
 - `poster.jpg` - homepage and service imagery referenced by `styles.css`
 - `styles.css` - shared layout, typography, colors, and responsive styling
 
